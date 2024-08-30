@@ -8,7 +8,15 @@
         <link rel="stylesheet" href="{% static 'styles.css' %}">
     </head>
     <body>
-        
+        <nav>
+            <li>
+                <form class="logout-link" action="/accounts/logout/"method="post">
+                    {% csrf_token %}
+                   
+                    <button type="submit">Logout</button>
+                </form>
+            </li>
+        </nav>
         <div class = "wrapper">
             <h1><a href="{% url 'article_list' %}">article</a></h1>
 

@@ -2,13 +2,13 @@ from django.shortcuts import render,redirect
 from django.contrib.auth.forms import UserCreationForm,AuthenticationForm
 from django.contrib import messages
 from django.urls import reverse
-from django.contrib.auth import login as auth_login
+from django.contrib.auth import login as auth_login,logout as auth_logout
 from django.contrib.auth import authenticate
 def signup(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
         if form.is_valid():
-            form.save()
+            user = form.save()
             messages.success(request, "User created successfully!")
             return redirect(reverse('article_list'))
         else :
@@ -34,3 +34,7 @@ def login(request):
         form = AuthenticationForm()
     return render(request,'accounts/login.html',{'form':form})
 
+def logout(request):
+    if request.method == 'POST':
+        auth_logout(request)
+    return redirect('article_list')
