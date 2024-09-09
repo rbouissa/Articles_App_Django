@@ -1,5 +1,5 @@
 from django.http import HttpResponse
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404,redirect
 from .models import Articles
 from django import forms
 from django.contrib.auth.decorators import login_required
@@ -15,5 +15,11 @@ def article_details(request,slug):
 
 @login_required(login_url="/accounts/login/")
 def create(request): 
-    form = forms.CreateArticle()
+    if request.method == 'POST':
+        form = forms.CreateArticle(request.POST,request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect("article_list")
+    else:       
+        form = forms.CreateArticle()
     return render(request,'articles/create_article.html',{'form':form})
