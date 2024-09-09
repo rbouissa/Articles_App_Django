@@ -1,6 +1,11 @@
 {% extends 'base_layout.html' %}
 
 {% block content %}
+<div class="creat-article">
 <h1>Create a New Article</h1>
-
+<form class="site-form" action="" method="post">
+    {% csrf_token %}
+    {{form}}
+</form>
+</div>
 {% endblock %}
