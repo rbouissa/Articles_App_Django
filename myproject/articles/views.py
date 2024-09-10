@@ -18,6 +18,8 @@ def create(request):
     if request.method == 'POST':
         form = forms.CreateArticle(request.POST,request.FILES)
         if form.is_valid():
+            article = form.save(commit=False)  # Do not save to the database yet
+            article.author = request.user
             form.save()
             return redirect("article_list")
     else:       
