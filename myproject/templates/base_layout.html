@@ -17,6 +17,12 @@
                     <button type="submit">Logout</button>
                 </form>
             </li>
+            <li>
+                <a href="{% url 'create'%}" class="highlight">
+                    New Article
+                </a>
+            </li>
+
             {% else %}
                 <li>
                     <a href="{% url 'accounts:login'%}">
@@ -28,10 +34,11 @@
                         signup
                     </a>
                 </li>
+                
             {%endif%}
         </nav>
         <div class = "wrapper">
-            <h1><a href="{% url 'article_list' %}">article</a></h1>
+            <h1><a href="{% url 'home' %}">article</a></h1>
 
             {%block content%}
             {%endblock%}
