@@ -9,6 +9,7 @@
     </head>
     <body>
         <nav>
+            {% if user.is_authenticated %}
             <li>
                 <form class="logout-link" action="/accounts/logout/"method="post">
                     {% csrf_token %}
@@ -16,6 +17,18 @@
                     <button type="submit">Logout</button>
                 </form>
             </li>
+            {% else %}
+                <li>
+                    <a href="{% url 'accounts:login'%}">
+                        login
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'accounts:signup'%}">
+                        signup
+                    </a>
+                </li>
+            {%endif%}
         </nav>
         <div class = "wrapper">
             <h1><a href="{% url 'article_list' %}">article</a></h1>
