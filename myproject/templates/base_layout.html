@@ -4,6 +4,7 @@
     <head>  
         <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <div class =article-detail>
         <title> Articles</title>
         <link rel="stylesheet" href="{% static 'styles.css' %}">
     </head>
@@ -11,6 +12,7 @@
         <nav>
             {% if user.is_authenticated %}
             <li>
+
                 <form class="logout-link" action="/accounts/logout/"method="post">
                     {% csrf_token %}
                    
@@ -18,7 +20,7 @@
                 </form>
             </li>
             <li>
-                <a href="{% url 'create'%}" class="highlight">
+                <a href="{% url 'create'%}" class="site-form ">
                     New Article
                 </a>
             </li>
@@ -37,11 +39,12 @@
                 
             {%endif%}
         </nav>
-        <div class = "wrapper">
+        <div class = "article-detail">
             <h1><a href="{% url 'home' %}">article</a></h1>
 
             {%block content%}
             {%endblock%}
         </div>
+    </div>
     </body>
 </html>

@@ -1,11 +1,33 @@
-/* styles.css */
-
 body {
-    background-image: url(stars.png); /* Adjust path if necessary */
+    background-image: url("../images/stars.png"); /* Adjust path */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
     color: #fff;
     font-family: Arial, sans-serif;
+}
+
+body * {
+    font-family: Ubuntu, sans-serif;
+}
+
+h1, h2, h3, h4, h5 {
+    font-weight: normal;
+    margin: 0;
+}
+
+a, a:hover, a:visited {
+    color: #fff;
+    text-decoration: none;
+}
+
+.article-detail .article p {
+    text-align: center;
+}
+
+.site-form {
+    margin-top: 60px;
+    border: 1px solid #00dba0;
+    padding: 20px;
 }
