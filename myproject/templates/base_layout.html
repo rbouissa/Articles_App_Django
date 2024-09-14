@@ -10,6 +10,9 @@
     <body>
        <header class="wrapper">
         <nav>
+            <!-- <a href="{% url 'article_list' %}"> -->
+                <!-- <img src="{% static 'site.webp' %}" alt="Site Logo" class="site-logo"> -->
+            <!-- </a> -->
             {% if user.is_authenticated %}
             <li>
                 <form class="logout-link" action="/accounts/logout/"method="post">
