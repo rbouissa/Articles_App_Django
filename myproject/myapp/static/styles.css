@@ -1,0 +1,97 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url("stars.png"); /* Adjust path */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+/* body * {
+    font-family: Ubuntu, sans-serif;
+} */
+
+ h1, h2, h3, h4, h5 {
+    font-weight: normal;
+    margin: 0;
+} 
+
+ /* a, a:hover, a:visited {
+    color: #fff;
+    text-decoration: none;
+}  */
+
+
+
+.wrapper {
+    max-width: 960px;
+    margin: 0 auto;
+} 
+
+div.wrapper h1 {
+    text-align: center; /* Correct spelling */
+    margin: 50px auto; /* Adjust the margin */
+    font-size: 2.4em; /* Remove space */
+}
+
+header{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 20px 0;
+}
+
+nav li{
+    display: inline-block;
+    margin-left: 20px;
+}
+
+nav button{
+    background: none;
+    color: #fff;
+    cursor: pointer;
+    border: 0;
+    font-size: 1em;
+}
+
+.articles{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 30px;
+}
+
+.article{
+    padding: 10px;
+    border: 1px solid #00bda0;
+    position: relative;
+    padding-bottom: 40px;
+}
+
+.article h2{
+    font-size: 1.2em;
+}
+.article .author{
+    padding: 10px;
+    background: #074239;
+}
+.article-detail .article{
+    padding: 0;
+}
+.article-detail .article img{
+    max-width: 100%;
+}
+.article-detail .article h2{
+    text-align: center;
+    margin: 20px auto;
+    font-size: 2em;
+}
+
+.article-detail .article p{
+    text-align: center;
+}
