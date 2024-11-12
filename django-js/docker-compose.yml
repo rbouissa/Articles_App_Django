@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./backend  # Path to your Django backend Dockerfile
+    container_name: backend
+    ports:
+      - "8000:8000"  # Maps port 8000 on the host to the backend
+    networks:
+      - app-network
+
+  frontend:
+    build: ./frontend  # Path to your frontend Dockerfile, which should copy static files to nginx
+    container_name: frontend
+    depends_on:
+      - backend
+    ports:
+      - "80:80"  # Maps port 80 on the host to the frontend service (nginx)
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
